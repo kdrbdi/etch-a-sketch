@@ -29,8 +29,17 @@ function generateGrid(numCells = 16) {
 
   cells.forEach((cell) => {
     cell.addEventListener("mouseover", function (e) {
-      e.target.classList.add("hovered");
-      e.target.style.backgroundColor = randomizeRGB();
+      if (!e.target.classList.contains("hovered"))
+        e.target.classList.add("hovered");
+      // Randomize Color
+      // e.target.style.backgroundColor = randomizeRGB();
+      else {
+        let bgColor = getComputedStyle(e.target).backgroundColor;
+        let opacity = parseInt(bgColor.substr(-2, 1));
+        if (opacity < 9) {
+          e.target.style.backgroundColor = `rgba(0,0,0, 0.${opacity + 1})`;
+        }
+      }
     });
   });
 }
