@@ -1,6 +1,12 @@
 const container = document.querySelector("#grid-container");
 const gridBtn = document.querySelector("#generate-grid");
 
+function randomizeRGB() {
+  return `rgb(${Math.floor(Math.random() * 255) + 1},${
+    Math.floor(Math.random() * 255) + 1
+  }, ${Math.floor(Math.random() * 255) + 1})`;
+}
+
 gridBtn.addEventListener("click", generateGrid);
 
 function generateGrid(numCells = 16) {
@@ -24,6 +30,7 @@ function generateGrid(numCells = 16) {
   cells.forEach((cell) => {
     cell.addEventListener("mouseover", function (e) {
       e.target.classList.add("hovered");
+      e.target.style.backgroundColor = randomizeRGB();
     });
   });
 }
