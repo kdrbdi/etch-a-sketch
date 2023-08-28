@@ -1,4 +1,4 @@
-const container = document.querySelector("#container");
+const container = document.querySelector("#grid-container");
 const gridBtn = document.querySelector("#generate-grid");
 
 gridBtn.addEventListener("click", generateGrid);

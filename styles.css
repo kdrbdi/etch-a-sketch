@@ -11,24 +11,23 @@ body {
   max-height: 100vh;
 }
 
-#container {
-  width: 100vw;
+#grid-container {
   display: flex;
   flex-flow: row wrap;
-  gap: 1px;
   justify-content: center;
   align-items: center;
+  width: 500px;
 }
 
 .square {
-  width: 10px;
-  height: 10px;
-  flex-basis: auto;
-  background-color: red;
+  aspect-ratio: 1/1;
+  flex: 1 1 auto;
+  border: 2px solid rgba(136, 136, 136, 0.24);
+  background-color: #eee;
 }
 
 .hovered {
-  background-color: cyan;
+  background-color: rgb(44, 44, 44);
 }
 
 .break {
