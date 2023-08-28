@@ -7,6 +7,8 @@ function randomizeRGB() {
   }, ${Math.floor(Math.random() * 255) + 1})`;
 }
 
+generateGrid();
+
 gridBtn.addEventListener("click", generateGrid);
 
 function generateGrid(numCells = 16) {
