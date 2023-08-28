@@ -19,12 +19,11 @@ function generateGrid(numCells = 16) {
       container.appendChild(square);
     }
   }
-}
+  const cells = document.querySelectorAll(".square");
 
-const cells = document.querySelectorAll(".square");
-
-cells.forEach((cell) => {
-  cell.addEventListener("mouseover", function (e) {
-    e.target.classList.add("hovered");
+  cells.forEach((cell) => {
+    cell.addEventListener("mouseover", function (e) {
+      e.target.classList.add("hovered");
+    });
   });
-});
+}
